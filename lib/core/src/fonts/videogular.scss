@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'videogular';
+  src:  url('videogular.eot?hj1wei');
+  src:  url('videogular.eot?hj1wei#iefix') format('embedded-opentype'),
+    url('videogular.ttf?hj1wei') format('truetype'),
+    url('videogular.woff?hj1wei') format('woff'),
+    url('videogular.svg?hj1wei#videogular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="vg-icon-"], [class*=" vg-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'videogular' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  font-size: 24px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+vg-player video {
+    width: 100%;
+    height: 100%;
+}
+
+.vg-icon {
+    &-closed_caption:before {
+        content: "\e006";
+    }
+    &-pause:before {
+        content: "\e018";
+    }
+    &-play_arrow:before {
+        content: "\e01b";
+    }
+    &-repeat:before {
+        content: "\e023";
+    }
+    &-replay:before {
+        content: "\e025";
+    }
+    &-skip_next:before {
+        content: "\e027";
+    }
+    &-skip_previous:before {
+        content: "\e028";
+    }
+    &-stop:before {
+        content: "\e02a";
+    }
+    &-volume_down:before {
+        content: "\e030";
+    }
+    &-volume_mute:before {
+        content: "\e031";
+    }
+    &-volume_off:before {
+        content: "\e032";
+    }
+    &-volume_up:before {
+        content: "\e033";
+    }
+    &-hd:before {
+        content: "\e035";
+    }
+    &-forward_10:before {
+        content: "\e038";
+    }
+    &-forward_30:before {
+        content: "\e039";
+    }
+    &-replay_10:before {
+        content: "\e03b";
+    }
+    &-replay_30:before {
+        content: "\e03c";
+    }
+    &-fullscreen:before {
+        content: "\e20c";
+    }
+    &-fullscreen_exit:before {
+        content: "\e20d";
+    }
+}
