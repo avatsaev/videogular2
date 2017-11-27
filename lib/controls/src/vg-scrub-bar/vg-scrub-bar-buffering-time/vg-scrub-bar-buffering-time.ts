@@ -1,11 +1,12 @@
-import { Component, Input, ElementRef, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../../core/services/vg-api';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'vg-scrub-bar-buffering-time',
     encapsulation: ViewEncapsulation.None,
-    template: `<div class="background" [style.width]="getBufferTime()"></div>`,
+    template: `
+        <div class="background" [style.width]="getBufferTime()"></div>`,
     styles: [ `
         vg-scrub-bar-buffering-time {
             display: flex;

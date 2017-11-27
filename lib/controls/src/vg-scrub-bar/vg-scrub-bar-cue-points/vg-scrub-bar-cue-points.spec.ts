@@ -1,5 +1,5 @@
 import { VgScrubBarCuePoints } from './vg-scrub-bar-cue-points';
-import { VgAPI } from '../../../core/services/vg-api';
+import { VgAPI } from '@videogular/core';
 import { ElementRef, SimpleChange } from '@angular/core';
 
 describe('Scrub bar current time', () => {

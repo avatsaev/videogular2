@@ -5,6 +5,7 @@
     "private": true,
     "peerDependencies": {
         "@angular/core": "^5.0.0",
-        "@angular/common": "^5.0.0"
+        "@angular/common": "^5.0.0",
+        "@videogular/core": "6.0.0"
     }
 }

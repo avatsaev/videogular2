@@ -1,5 +1,5 @@
-import { Component, Input, ElementRef, HostListener, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 
@@ -73,7 +73,7 @@ export class VgMute implements OnInit, OnDestroy {
         this.changeMuteState();
     }
 
-    @HostListener('keydown', ['$event'])
+    @HostListener('keydown', [ '$event' ])
     onKeyDown(event: KeyboardEvent) {
         // On press Enter (13) or Space (32)
         if (event.keyCode === 13 || event.keyCode === 32) {

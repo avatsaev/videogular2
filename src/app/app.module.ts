@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from '../../lib/core/src/core.module';
+import { VgCoreModule } from '@videogular/core';
+import { VgControlsModule } from '@videogular/controls';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CoreModule } from '../../lib/core/src/core.module';
     ],
     imports: [
         BrowserModule,
-        CoreModule
+        VgCoreModule,
+        VgControlsModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

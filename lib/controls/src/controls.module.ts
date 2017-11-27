@@ -12,7 +12,7 @@ import { VgScrubBarCuePoints } from './vg-scrub-bar/vg-scrub-bar-cue-points/vg-s
 import { VgScrubBarCurrentTime } from './vg-scrub-bar/vg-scrub-bar-current-time/vg-scrub-bar-current-time';
 import { VgTimeDisplay, VgUtcPipe } from './vg-time-display/vg-time-display';
 import { VgTrackSelector } from './vg-track-selector/vg-track-selector';
-import { VgControlsHidden } from './../core/services/vg-controls-hidden';
+import { VgAPI, VgControlsHidden } from '@videogular/core';
 
 @NgModule({
     imports: [ CommonModule ],
@@ -46,7 +46,7 @@ import { VgControlsHidden } from './../core/services/vg-controls-hidden';
         VgUtcPipe,
         VgTrackSelector
     ],
-    providers: [ VgControlsHidden ]
+    providers: [ VgAPI, VgControlsHidden ]
 })
 export class VgControlsModule {
 }

@@ -1,15 +1,21 @@
 import {
-    Component, Input, ElementRef, HostListener, OnInit, ViewEncapsulation, ViewChild,
-    OnDestroy
+    Component,
+    ElementRef,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+    ViewEncapsulation
 } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'vg-volume',
     encapsulation: ViewEncapsulation.None,
     template: `
-        <div 
+        <div
             #volumeBar
             class="volumeBar"
             tabindex="0"
@@ -43,12 +49,14 @@ import { Subscription } from 'rxjs/Subscription';
             color: white;
             line-height: 50px;
         }
+
         vg-volume .volumeBar {
             position: relative;
             display: flex;
             flex-grow: 1;
             align-items: center;
         }
+
         vg-volume .volumeBackground {
             display: flex;
             flex-grow: 1;
@@ -56,23 +64,28 @@ import { Subscription } from 'rxjs/Subscription';
             pointer-events: none;
             background-color: #333;
         }
+
         vg-volume .volumeValue {
             display: flex;
             height: 5px;
             pointer-events: none;
             background-color: #FFF;
-            transition:all 0.2s ease-out;
+            transition: all 0.2s ease-out;
         }
+
         vg-volume .volumeKnob {
             position: absolute;
-            width: 15px; height: 15px;
-            left: 0; top: 50%;
+            width: 15px;
+            height: 15px;
+            left: 0;
+            top: 50%;
             transform: translateY(-50%);
             border-radius: 15px;
             pointer-events: none;
             background-color: #FFF;
-            transition:all 0.2s ease-out;
+            transition: all 0.2s ease-out;
         }
+
         vg-volume .volumeBackground.dragging .volumeValue,
         vg-volume .volumeBackground.dragging .volumeKnob {
             transition: none;
@@ -136,15 +149,15 @@ export class VgVolume implements OnInit, OnDestroy {
         }
     }
 
-    @HostListener('keydown', ['$event'])
+    @HostListener('keydown', [ '$event' ])
     arrowAdjustVolume(event: KeyboardEvent) {
         if (event.keyCode === 38 || event.keyCode === 39) {
             event.preventDefault();
-            this.setVolume(Math.max(0, Math.min(100,(this.getVolume() * 100) + 10)));
+            this.setVolume(Math.max(0, Math.min(100, (this.getVolume() * 100) + 10)));
         }
         else if (event.keyCode === 37 || event.keyCode === 40) {
             event.preventDefault();
-            this.setVolume(Math.max(0, Math.min(100,(this.getVolume() * 100) - 10)));
+            this.setVolume(Math.max(0, Math.min(100, (this.getVolume() * 100) - 10)));
         }
     }
 

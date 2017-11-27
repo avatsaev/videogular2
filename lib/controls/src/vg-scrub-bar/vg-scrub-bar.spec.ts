@@ -1,34 +1,37 @@
-import {VgScrubBar} from "./vg-scrub-bar";
-import {VgAPI} from "../../core/services/vg-api";
-import {ChangeDetectorRef, ElementRef} from "@angular/core";
-import {VgControlsHidden} from './../../core/services/vg-controls-hidden';
-import {VgMedia} from "../../core/vg-media/vg-media";
-import { VgStates } from '../../core/states/vg-states';
+import { VgScrubBar } from "./vg-scrub-bar";
+import { VgAPI, VgControlsHidden, VgMedia, VgStates } from "@videogular/core";
+import { ChangeDetectorRef, ElementRef } from "@angular/core";
 
 describe('Scrub bar', () => {
-    let scrubBar:VgScrubBar;
-    let ref:ElementRef;
-    let cdRef:ChangeDetectorRef;
-    let api:VgAPI;
+    let scrubBar: VgScrubBar;
+    let ref: ElementRef;
+    let cdRef: ChangeDetectorRef;
+    let api: VgAPI;
     let vgControlsHiddenState: VgControlsHidden;
-    let media:VgMedia;
+    let media: VgMedia;
     let elem = {
-        play: () => {},
-        pause: () => {},
-        load: () => {},
+        play: () => {
+        },
+        pause: () => {
+        },
+        load: () => {
+        },
         duration: 100,
         currentTime: 0,
         volume: 1,
         playbackRate: 1,
         buffered: {
             length: 2,
-            end: () => {return 50;}
+            end: () => {
+                return 50;
+            }
         },
         id: 'testVideo',
         observe: () => {
             return <any>{};
         },
-        dispatchEvent: () => {}
+        dispatchEvent: () => {
+        }
     };
 
     beforeEach(() => {
@@ -41,11 +44,16 @@ describe('Scrub bar', () => {
             }
         };
         cdRef = {
-            detectChanges: () => {},
-            markForCheck: () => {},
-            detach: () => {},
-            reattach: () => {},
-            checkNoChanges: () => {}
+            detectChanges: () => {
+            },
+            markForCheck: () => {
+            },
+            detach: () => {
+            },
+            reattach: () => {
+            },
+            checkNoChanges: () => {
+            }
         }
 
         api = new VgAPI();
@@ -78,9 +86,12 @@ describe('Scrub bar', () => {
     describe('onMouseDownScrubBar', () => {
         it('should call API seekTime 10 when offsetX is 20 and scrollWidth is 200', () => {
             api = <any>{
-                seekTime: () => {},
-                pause: () => {},
-                registerMedia: () => {},
+                seekTime: () => {
+                },
+                pause: () => {
+                },
+                registerMedia: () => {
+                },
                 state: VgStates.VG_PLAYING,
                 isLive: false,
                 canPlay: true
@@ -179,7 +190,7 @@ describe('Scrub bar', () => {
             scrubBar.target = api;
             scrubBar.vgSlider = false;
 
-            scrubBar.onTouchStartScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchStartScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledWith(10, true);
             expect(api.pause).toHaveBeenCalledTimes(0);
@@ -187,7 +198,7 @@ describe('Scrub bar', () => {
             scrubBar.vgSlider = true;
             scrubBar.isSeeking = true;
 
-            scrubBar.onTouchStartScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchStartScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(1);
             expect(api.pause).toHaveBeenCalledTimes(1);
@@ -201,14 +212,14 @@ describe('Scrub bar', () => {
             scrubBar.target = api;
             scrubBar.vgSlider = false;
 
-            scrubBar.onTouchMoveScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchMoveScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
 
             scrubBar.vgSlider = true;
             scrubBar.isSeeking = true;
 
-            scrubBar.onTouchMoveScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchMoveScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledWith(10, true);
         });
@@ -221,14 +232,14 @@ describe('Scrub bar', () => {
             scrubBar.target = api;
             scrubBar.vgSlider = false;
 
-            scrubBar.onTouchCancelScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchCancelScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
 
             scrubBar.vgSlider = true;
             scrubBar.isSeeking = true;
 
-            scrubBar.onTouchCancelScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchCancelScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
         });
@@ -241,14 +252,14 @@ describe('Scrub bar', () => {
             scrubBar.target = api;
             scrubBar.vgSlider = false;
 
-            scrubBar.onTouchEndScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchEndScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
 
             scrubBar.vgSlider = true;
             scrubBar.isSeeking = true;
 
-            scrubBar.onTouchEndScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchEndScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
         });
@@ -261,14 +272,14 @@ describe('Scrub bar', () => {
             scrubBar.target = api;
             scrubBar.vgSlider = false;
 
-            scrubBar.onTouchLeaveScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchLeaveScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
 
             scrubBar.vgSlider = true;
             scrubBar.isSeeking = true;
 
-            scrubBar.onTouchLeaveScrubBar({ touches: [ {pageX: 20 }]});
+            scrubBar.onTouchLeaveScrubBar({ touches: [ { pageX: 20 } ] });
 
             expect(api.seekTime).toHaveBeenCalledTimes(0);
         });

@@ -1,12 +1,11 @@
-import {VgPlaybackButton} from "./vg-playback-button";
-import {VgAPI} from "../../core/services/vg-api";
-import {ElementRef} from "@angular/core";
-import {VgStates} from "../../core/states/vg-states";
+import { VgPlaybackButton } from "./vg-playback-button";
+import { VgAPI, VgStates } from "@videogular/core";
+import { ElementRef } from "@angular/core";
 
 describe('Playback Button', () => {
-    let playbackButton:VgPlaybackButton;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let playbackButton: VgPlaybackButton;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -36,7 +35,8 @@ describe('Playback Button', () => {
     });
 
     it('Should get media by id on init', () => {
-        spyOn(api, 'getMediaById').and.callFake(() => { });
+        spyOn(api, 'getMediaById').and.callFake(() => {
+        });
 
         playbackButton.vgFor = 'test';
         playbackButton.onPlayerReady();

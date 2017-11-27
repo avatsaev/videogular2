@@ -1,12 +1,11 @@
-import {VgPlayPause} from "./vg-play-pause";
-import {VgAPI} from "../../core/services/vg-api";
-import {ElementRef} from "@angular/core";
-import {VgStates} from "../../core/states/vg-states";
+import { VgPlayPause } from "./vg-play-pause";
+import { VgAPI, VgStates } from "@videogular/core";
+import { ElementRef } from "@angular/core";
 
 describe('Play/Pause Button', () => {
-    let playPause:VgPlayPause;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let playPause: VgPlayPause;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -60,7 +59,8 @@ describe('Play/Pause Button', () => {
 
     describe('onClick (single and multiple media)', () => {
         it('should pause if current state is different play', () => {
-            spyOn(api, 'pause').and.callFake(() => {});
+            spyOn(api, 'pause').and.callFake(() => {
+            });
 
             api.medias = {
                 main: {
@@ -76,7 +76,8 @@ describe('Play/Pause Button', () => {
         });
 
         it('should play if current state is pause', () => {
-            spyOn(api, 'play').and.callFake(() => {});
+            spyOn(api, 'play').and.callFake(() => {
+            });
 
             api.medias = {
                 main: {
@@ -92,7 +93,8 @@ describe('Play/Pause Button', () => {
         });
 
         it('should play if current state is ended', () => {
-            spyOn(api, 'play').and.callFake(() => {});
+            spyOn(api, 'play').and.callFake(() => {
+            });
 
             api.medias = {
                 main: {

@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, Input, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 export interface Option {
@@ -17,13 +17,13 @@ export interface Option {
                  [class.vg-icon-closed_caption]="!trackSelected">
                 {{ trackSelected || '' }}
             </div>
-            
-            <select class="trackSelector" 
+
+            <select class="trackSelector"
                     (change)="selectTrack($event.target.value)"
                     tabindex="0"
                     aria-label="track selector"
                     [attr.aria-valuetext]="ariaValue">
-                <option 
+                <option
                     *ngFor="let track of tracks"
                     [value]="track.id"
                     [selected]="track.selected === true">
@@ -47,15 +47,17 @@ export interface Option {
             color: white;
             line-height: 50px;
         }
+
         vg-track-selector .container {
             position: relative;
             display: flex;
             flex-grow: 1;
             align-items: center;
-            
+
             padding: 0;
             margin: 5px;
         }
+
         vg-track-selector select.trackSelector {
             width: 50px;
             padding: 5px 8px;
@@ -67,6 +69,7 @@ export interface Option {
             color: transparent;
             font-size: 16px;
         }
+
         vg-track-selector .track-selected {
             position: absolute;
             width: 100%;
@@ -78,6 +81,7 @@ export interface Option {
             padding-top: 2px;
             pointer-events: none;
         }
+
         vg-track-selector .vg-icon-closed_caption:before {
             width: 100%;
         }

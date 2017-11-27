@@ -1,10 +1,14 @@
 import {
-    Component, ElementRef, Input, HostListener, OnInit, ViewEncapsulation, HostBinding,
-    OnDestroy
+    Component,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
+    ViewEncapsulation
 } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
-import { VgControlsHidden } from './../../core/services/vg-controls-hidden';
-import { VgStates } from '../../core/states/vg-states';
+import { VgAPI, VgControlsHidden, VgStates } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -22,7 +26,7 @@ import { Subscription } from 'rxjs/Subscription';
              [attr.aria-valuetext]="getPercentage() + '%'">
             <ng-content></ng-content>
         </div>
-        
+
     `,
     styles: [ `
         vg-scrub-bar {
@@ -46,7 +50,7 @@ import { Subscription } from 'rxjs/Subscription';
             -ms-transition: bottom 1s, opacity 0.5s;
             transition: bottom 1s, opacity 0.5s;
         }
-        
+
         vg-scrub-bar .scrubBar {
             position: relative;
             display: flex;
@@ -233,7 +237,7 @@ export class VgScrubBar implements OnInit, OnDestroy {
         }
     }
 
-    @HostListener('keydown', ['$event'])
+    @HostListener('keydown', [ '$event' ])
     arrowAdjustVolume(event: KeyboardEvent) {
         if (event.keyCode === 38 || event.keyCode === 39) {
             event.preventDefault();

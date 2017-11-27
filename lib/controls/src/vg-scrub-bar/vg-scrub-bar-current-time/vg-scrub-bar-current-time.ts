@@ -1,11 +1,12 @@
-import { Component, Input, ElementRef, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../../core/services/vg-api';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'vg-scrub-bar-current-time',
     encapsulation: ViewEncapsulation.None,
-    template: `<div class="background" [style.width]="getPercentage()"></div><span class="slider" *ngIf="vgSlider"></span>`,
+    template: `
+        <div class="background" [style.width]="getPercentage()"></div><span class="slider" *ngIf="vgSlider"></span>`,
     styles: [ `
         vg-scrub-bar-current-time {
             display: flex;
@@ -33,8 +34,8 @@ import { Subscription } from 'rxjs/Subscription';
             -moz-border-radius: 2px;
             border-radius: 2px;
         }
-        
-        vg-scrub-bar-current-time .slider{
+
+        vg-scrub-bar-current-time .slider {
             background: white;
             height: 15px;
             width: 15px;

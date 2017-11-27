@@ -1,0 +1,1 @@
+{"name":"@videogular/controls","version":"0.0.0-semantically-released","license":"MIT","private":true,"peerDependencies":{"@angular/core":"^5.0.0","@angular/common":"^5.0.0","@videogular/core":"6.0.0"},"main":"bundles/controls.umd.js","module":"@videogular/controls.es5.js","es2015":"@videogular/controls.js","typings":"controls.d.ts","metadata":"controls.metadata.json"}

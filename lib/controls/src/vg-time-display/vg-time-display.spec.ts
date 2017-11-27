@@ -1,11 +1,11 @@
-import {VgTimeDisplay} from "./vg-time-display";
-import {ElementRef} from "@angular/core";
-import {VgAPI} from "../../core/services/vg-api";
+import { VgTimeDisplay } from "./vg-time-display";
+import { ElementRef } from "@angular/core";
+import { VgAPI } from "@videogular/core";
 
 describe('Time Display', () => {
-    let timeDisplay:VgTimeDisplay;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let timeDisplay: VgTimeDisplay;
+    let ref: ElementRef;
+    let api: VgAPI;
     let renderer;
 
     beforeEach(() => {
@@ -20,7 +20,8 @@ describe('Time Display', () => {
         };
 
         renderer = {
-            setElementClass: () => {}
+            setElementClass: () => {
+            }
         };
 
         timeDisplay = new VgTimeDisplay(ref, api);
@@ -31,7 +32,9 @@ describe('Time Display', () => {
     });
 
     it('Should be initialized', () => {
-        spyOn(api, 'getMediaById').and.callFake(() => { return ref.nativeElement; });
+        spyOn(api, 'getMediaById').and.callFake(() => {
+            return ref.nativeElement;
+        });
 
         timeDisplay.vgFor = 'test';
         timeDisplay.onPlayerReady();

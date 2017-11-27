@@ -33,5 +33,5 @@ const CORE_DECLARATIONS = [
     exports: [ CORE_DECLARATIONS ],
     providers: [ VgAPI, VgFullscreenAPI, VgUtils, VgControlsHidden ]
 })
-export class CoreModule {
+export class VgCoreModule {
 }

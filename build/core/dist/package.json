@@ -1,0 +1,1 @@
+{"name":"@videogular/core","version":"0.0.0-semantically-released","license":"MIT","private":true,"peerDependencies":{"@angular/core":"^5.0.0","@angular/common":"^5.0.0"},"main":"bundles/core.umd.js","module":"@videogular/core.es5.js","es2015":"@videogular/core.js","typings":"core.d.ts","metadata":"core.metadata.json"}

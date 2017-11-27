@@ -1,18 +1,14 @@
-import {
-    Component, Input, OnInit, ElementRef, HostBinding, AfterViewInit, ViewEncapsulation,
-    EventEmitter, Output
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostBinding, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { VgAPI } from '../core/services/vg-api';
-import { VgControlsHidden } from './../core/services/vg-controls-hidden';
+import { VgAPI, VgControlsHidden, VgStates } from '@videogular/core';
 import 'rxjs/add/observable/fromEvent';
-import { VgStates } from '../core/states/vg-states';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'vg-controls',
     encapsulation: ViewEncapsulation.None,
-    template: `<ng-content></ng-content>`,
+    template: `
+        <ng-content></ng-content>`,
     styles: [ `
         vg-controls {
             position: absolute;
@@ -29,10 +25,10 @@ import { Subscription } from 'rxjs/Subscription';
             transition: bottom 1s;
         }
 
-        vg-controls.hide {  
+        vg-controls.hide {
             bottom: -50px;
         }
-    `]
+    ` ]
 })
 export class VgControls implements OnInit, AfterViewInit {
     elem: HTMLElement;

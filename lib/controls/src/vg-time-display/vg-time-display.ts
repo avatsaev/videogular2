@@ -1,5 +1,5 @@
-import { Component, Input, ElementRef, OnInit, PipeTransform, Pipe, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
+import { Component, ElementRef, Input, OnDestroy, OnInit, Pipe, PipeTransform, ViewEncapsulation } from '@angular/core';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 // Workaround until we can use UTC with Angular Date Pipe
@@ -8,9 +8,9 @@ export class VgUtcPipe implements PipeTransform {
     transform(value: number, format: string): string {
         let date = new Date(value);
         let result = format;
-        let ss: string|number = date.getUTCSeconds();
-        let mm: string|number = date.getUTCMinutes();
-        let hh: string|number = date.getUTCHours();
+        let ss: string | number = date.getUTCSeconds();
+        let mm: string | number = date.getUTCMinutes();
+        let hh: string | number = date.getUTCHours();
 
         if (ss < 10) {
             ss = '0' + ss;

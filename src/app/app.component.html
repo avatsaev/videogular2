@@ -1,4 +1,13 @@
 <vg-player (onPlayerReady)="onPlayerReady($event)">
+    <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+        <vg-time-display></vg-time-display>
+        <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
     <video controls
            src="http://static.videogular.com/assets/videos/videogular.mp4">
     </video>

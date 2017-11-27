@@ -1,6 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit, Input, ViewEncapsulation, OnDestroy } from '@angular/core';
-import { VgAPI } from '../../core/services/vg-api';
-import { VgStates } from '../../core/states/vg-states';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { VgAPI, VgStates } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -69,7 +68,7 @@ export class VgPlayPause implements OnInit, OnDestroy {
         this.playPause();
     }
 
-    @HostListener('keydown', ['$event'])
+    @HostListener('keydown', [ '$event' ])
     onKeyDown(event: KeyboardEvent) {
         // On press Enter (13) or Space (32)
         if (event.keyCode === 13 || event.keyCode === 32) {

@@ -1,11 +1,11 @@
-import {VgScrubBarBufferingTime} from "./vg-scrub-bar-buffering-time";
-import {VgAPI} from "../../../core/services/vg-api";
-import {ElementRef} from "@angular/core";
+import { VgScrubBarBufferingTime } from "./vg-scrub-bar-buffering-time";
+import { VgAPI } from "@videogular/core";
+import { ElementRef } from "@angular/core";
 
 describe('Scrub bar buffering time', () => {
     let scrubBarBufferingTime: VgScrubBarBufferingTime;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -39,7 +39,7 @@ describe('Scrub bar buffering time', () => {
                 buffer: {
                     end: 10
                 },
-                buffered: [1]
+                buffered: [ 1 ]
             };
 
             let percent = scrubBarBufferingTime.getBufferTime();
@@ -55,7 +55,7 @@ describe('Scrub bar buffering time', () => {
                 buffer: {
                     end: 5
                 },
-                buffered: [1]
+                buffered: [ 1 ]
             };
 
             let percent = scrubBarBufferingTime.getBufferTime();

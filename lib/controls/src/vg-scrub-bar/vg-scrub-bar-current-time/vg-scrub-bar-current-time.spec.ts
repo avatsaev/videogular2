@@ -1,11 +1,11 @@
-import {VgScrubBarCurrentTime} from "./vg-scrub-bar-current-time";
-import {VgAPI} from "../../../core/services/vg-api";
-import {ElementRef} from "@angular/core";
+import { VgScrubBarCurrentTime } from "./vg-scrub-bar-current-time";
+import { VgAPI } from "@videogular/core";
+import { ElementRef } from "@angular/core";
 
 describe('Scrub bar current time', () => {
     let scrubBarCurrentTime: VgScrubBarCurrentTime;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {

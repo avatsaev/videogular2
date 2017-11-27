@@ -8,7 +8,7 @@ import {
     SimpleChange,
     ViewEncapsulation
 } from '@angular/core';
-import { VgAPI } from '../../../core/services/vg-api';
+import { VgAPI } from '@videogular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
